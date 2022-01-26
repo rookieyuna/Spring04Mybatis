@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+해당 xml파일이 mapper역할을 하기 위해 반드시 필요한 Doctype
+공식문서URL : https://mybatis.org/mybatis-3/configuration.html 
+-->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="mybatis.MybatisMemberImpl"> 
+
+	<!-- 
+	파라미터를 받는 두번째 방법으로 순서대로 0,1...로 기술한다.
+	2개의 파라미터를 통해 select한 결과를 MemberVO객체로 반환한다.
+	 -->
+	<select id="login" resultType="mybatis.MemberVO">
+		SELECT * FROM member WHERE id=#{0} and pass=#{1}
+	</select>
+ </mapper>
